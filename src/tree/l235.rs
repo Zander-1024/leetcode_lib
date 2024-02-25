@@ -32,3 +32,19 @@ impl Solution {
         ancestor
     }
 }
+
+#[cfg(test)]
+mod tests {
+
+    use super::*;
+
+    #[test]
+    fn test_lowest_common_ancestor() {
+        let root = TreeNode::build_tree("[6,2,8,0,4,7,9,null,null,3,5]").unwrap();
+        let p = Some(Rc::new(RefCell::new(TreeNode::new(2))));
+        let q = Some(Rc::new(RefCell::new(TreeNode::new(8))));
+        let ans = Solution::lowest_common_ancestor(Some(root.clone()), p, q);
+
+        assert_eq!(ans.unwrap().borrow().val, 6);
+    }
+}
