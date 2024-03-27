@@ -1,3 +1,4 @@
+mod daily_question;
 mod tree;
 
 pub fn add(left: usize, right: usize) -> usize {
